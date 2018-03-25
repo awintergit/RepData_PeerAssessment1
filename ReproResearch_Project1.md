@@ -1,3 +1,8 @@
+This small chunk is for saving away image files that are produced.
+
+    knitr::opts_chunk$set(
+      fig.path = "figures/")
+
 Read in the activity data set
 =============================
 
@@ -33,8 +38,8 @@ Then, make a histogram with the totals
     hist(stepTotals$steps, breaks = 5, col = 4, axes = TRUE, 
          main = "Total Number of Steps", xlab = "Number of Steps")
 
-![](ReproResearch_Project1_files/figure-markdown_strict/unnamed-chunk-3-1.png)
-Calculate mean and median of the total number of steps taken per day
+![](figures/unnamed-chunk-3-1.png) Calculate mean and median of the
+total number of steps taken per day
 
     avg <- mean(stepTotals$steps)
     med <- median(stepTotals$steps)
@@ -57,8 +62,8 @@ Graph the time series plot
          main = "Average number of steps across all days", 
          xlab = "Intervals", ylab = "Average number of steps")
 
-![](ReproResearch_Project1_files/figure-markdown_strict/unnamed-chunk-6-1.png)
-Find interval with maximum average number of steps
+![](figures/unnamed-chunk-6-1.png) Find interval with maximum average
+number of steps
 
     maxSteps <-sort(intervals$steps, decreasing = TRUE)[1]
     maxInt <- as.numeric(intervals[intervals$steps == maxSteps,][1])
@@ -111,8 +116,8 @@ Make a histogram of the total number of steps taken each day.
     hist(fillStepTotals$steps, breaks = 5, col = 4, axes = TRUE, 
         main = "Total Number of Steps (Filled In)", xlab = "Number of Steps")
 
-![](ReproResearch_Project1_files/figure-markdown_strict/unnamed-chunk-11-1.png)
-Calculate mean and median steps for the new filled in data.
+![](figures/unnamed-chunk-11-1.png) Calculate mean and median steps for
+the new filled in data.
 
     fillAvg <- mean(fillStepTotals$steps)
     fillMed <- median(fillStepTotals$steps)
@@ -174,4 +179,4 @@ plotting system.
     library(lattice)
     xyplot(steps ~ interval | dayType, data = intervalsByDay, type = "l", layout = c(1,2), xlab = "Interval", ylab = "Number of Steps")
 
-![](ReproResearch_Project1_files/figure-markdown_strict/unnamed-chunk-15-1.png)
+![](figures/unnamed-chunk-15-1.png)

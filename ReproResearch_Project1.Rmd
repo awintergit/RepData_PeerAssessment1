@@ -2,9 +2,13 @@
 title: "ReproResearch_Project1"
 author: "Adam Winter"
 date: "March 23, 2018"
-output: html_document
+output: md_document
 ---
-
+This small chunk is for saving away image files that are produced.   
+```{r opts, echo = TRUE}
+knitr::opts_chunk$set(
+  fig.path = "figures/")
+```
 #Read in the activity data set
 ```{r}
 setwd("/Users/adamwinter/R_Analytics/Data/")
